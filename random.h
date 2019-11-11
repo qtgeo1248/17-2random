@@ -5,4 +5,4 @@
 #include <errno.h>
 #include <unistd.h>
 
-int ranNum();
+int rand_num();

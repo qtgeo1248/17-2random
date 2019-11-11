@@ -1,6 +1,6 @@
 #include "random.h"
 
-int ranNum() {
+int rand_num() {
     int fd = open("/dev/urandom", O_RDONLY);
     if (fd == -1) {
         printf("%s\n", strerror(errno));
@@ -10,5 +10,6 @@ int ranNum() {
     if (read(fd, p, 4) == -1) {
         printf("%s\n", strerror(errno));
     }
+    close(fd);
     return num;
 }
