@@ -7,7 +7,7 @@ int rand_num() {
     }
     int num = 0;
     int *p = &num;
-    if (read(fd, p, 4) == -1) {
+    if (read(fd, p, sizeof(int)) == -1) {
         printf("%s\n", strerror(errno));
     }
     close(fd);

@@ -1,3 +1,4 @@
 *.o
 program
 program.dSYM
+rand_nums
