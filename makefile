@@ -1,3 +1,9 @@
+ifeq ($(DEBUG), true)
+	CC = gcc -g
+else
+	CC = gcc
+endif
+
 all: main.o random.o
 	gcc -o program main.o random.o
 
@@ -12,3 +18,6 @@ run:
 
 clean:
 	rm *.o
+
+memcheck:
+	valgrind --leak-check=yes ./program
